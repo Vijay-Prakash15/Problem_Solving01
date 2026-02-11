@@ -35,6 +35,6 @@ public class searchinRorated {
     public static void main(String[] args) {
         int[] nums = {4,5,6,7,0,1,2};
         int target = 0;
-        System.err.println("Search in rotated sorted array :- "+ search(nums, target));
+        System.err.println("Search in rotated sorted array :- :"+ search(nums, target));
     }
 }
