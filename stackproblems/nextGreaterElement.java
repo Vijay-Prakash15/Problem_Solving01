@@ -1,6 +1,5 @@
-package Stack;
+package stackproblems;
 import java.util.*;
-import java.util.Stack;
 public class nextGreaterElement {
     public static int[] nextGreater(int[] arr){
         int n = arr.length;

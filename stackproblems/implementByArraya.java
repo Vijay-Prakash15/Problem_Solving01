@@ -1,9 +1,9 @@
-package Stack;
-class Stack{
+package stackproblems;
+class Stack1{
     int[] arr;
     int top;
     int size;
-    Stack(int size){
+    Stack1(int size){
         this.size=size;
         arr=new int[size];
         top=-1;
@@ -54,7 +54,7 @@ class Stack{
 }
 public class implementByArraya {
     public static void main(String[] args) {
-        Stack st = new Stack(5);
+        Stack1 st = new Stack1(5);
         st.push(10);
         st.push(20);
         st.push(30);
