@@ -11,6 +11,7 @@ public class question1{
             arr[i] = sc.nextInt();
         }
         int q = sc.nextInt();
+        
         int[][] queries = new int[q][4];
         for(int i=0;i<q;i++){
             for(int j=0;j<4;j++){
