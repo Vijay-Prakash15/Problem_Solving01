@@ -2,18 +2,18 @@ package stackproblems;
 
 import java.util.Stack;
 
-public class sum_of_subarray_minimum {
+public class sum_of_subarray_maximum {
     public static void main(String[] aargs){
         int[] arr = {4,-2,-3,4,1};
-        int x = sumSubarrayMins(arr);
+        int x = sumSubarrayMaxs(arr);
         System.out.println(x);
     }
-    public static int[] NSL(int[] arr){
+    public static int[] NGL(int[] arr){
         int n = arr.length;
         int[] ans = new int[n];
         Stack<Integer> st = new Stack<>();
         for(int i=0;i<n;i++){
-            while(!st.isEmpty() && arr[st.peek()] > arr[i]){
+            while(!st.isEmpty() && arr[st.peek()] < arr[i]){
                 st.pop();
             }
             if(st.isEmpty()){
@@ -26,12 +26,12 @@ public class sum_of_subarray_minimum {
         }
         return ans;
     }
-    public static int[] NSR(int[] arr){
+    public static int[] NGR(int[] arr){
         int n = arr.length;
         int[] ans = new int[n];
         Stack<Integer> st = new Stack<>();
         for(int i=n-1;i>=0;i--){
-            while(!st.isEmpty() && arr[st.peek()] >= arr[i]){
+            while(!st.isEmpty() && arr[st.peek()] <= arr[i]){
                 st.pop();
             }
             if(st.isEmpty()){
@@ -44,10 +44,10 @@ public class sum_of_subarray_minimum {
         }
         return ans;
     }
-    public static int sumSubarrayMins(int[] arr) {
+    public static int sumSubarrayMaxs(int[] arr) {
         int n = arr.length;
-        int[] left = NSL(arr);
-        int[] right = NSR(arr);
+        int[] left = NGL(arr);
+        int[] right = NGR(arr);
         long sum = 0;
         int M = 1000000007;
         for(int i=0;i<n;i++){
